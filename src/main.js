@@ -99,10 +99,10 @@ console.log(error);
                 page++;
                 loader.classList.remove('is-hidden');
                 try{
-                    const response =  await fetchImages(searchQuery,page);
+                    const response2 =  await fetchImages(searchQuery,page);
                     loader.classList.add('is-hidden');
-                    const markup = response.data.hits.map(el => galleryFn(el)).join('');
-                    ul.insertAdjacentHTML( 'beforeend', markup);
+                    const markup2 = response2.data.hits.map(el => galleryFn(el)).join('');
+                    ul.insertAdjacentHTML( 'beforeend', markup2);
             
                     const simplebox2 = new SimpleLightbox('.gallery a', {
                         captionsData: "alt", // встановлює підпис
@@ -112,8 +112,8 @@ console.log(error);
                         scrollZoom: false, //вбирає скрол мишою
                     });
                     simplebox2.refresh();
-                
-                    if(page * 15 <= response.data.totalHits){
+
+                    if(page * 15 <= response2.data.totalHits){
                         iziToast.info({
                             message: "We're sorry, but you've reached the end of search results.",
                             iconUrl: 'https://symbl-world.akamaized.net/i/webp/c1/d9d88630432cf61ad335df98ce37d6.webp',
@@ -127,11 +127,13 @@ console.log(error);
                         loadMoreBtn.removeEventListener('click', clickLoadMore);
                         loadMoreBtn.classList.add('is-hidden');
                     }
+                      
         }
             catch(error){
                 console.log(error);
             }
         }
+           
 
                    
                          

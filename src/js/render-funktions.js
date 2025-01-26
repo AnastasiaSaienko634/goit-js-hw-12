@@ -21,5 +21,9 @@ export const galleryFn = ImgInfo => {
 };
 
 
+export function clearGallery() {
+    const gallery = document.querySelector('.gallery');
+    gallery.innerHTML = '';
+  }
 
 // webformatURL,largeImageURL,tags,likes,views,comments,downloads

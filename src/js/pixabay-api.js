@@ -1,11 +1,4 @@
 import axios from 'axios';
-// const ul = document.querySelector('.gallery-js');
-// const key = '47906574-737e3153d4e9e6f9b55134ae6';
-// const url = 'https://pixabay.com/api/';
-
-
-
-
 
 export function fetchImages(searchQuery, currentPage){
     const axiousParams = {

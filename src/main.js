@@ -87,7 +87,12 @@ try {
 } catch(error){
 console.log(error);
 }   
+ finally{
+    form.reset();
+    loader.classList.add('is-hidden');
 }
+}
+
 
   form.addEventListener('submit', generalFunktion);
     
@@ -112,8 +117,9 @@ console.log(error);
                         scrollZoom: false, //вбирає скрол мишою
                     });
                     simplebox2.refresh();
+                    form.reset();
 
-                    if(page * 15 <= response2.data.totalHits){
+                    if(page * 15 >= response2.data.totalHits){
                         iziToast.info({
                             message: "We're sorry, but you've reached the end of search results.",
                             iconUrl: 'https://symbl-world.akamaized.net/i/webp/c1/d9d88630432cf61ad335df98ce37d6.webp',
@@ -127,13 +133,20 @@ console.log(error);
                         loadMoreBtn.removeEventListener('click', clickLoadMore);
                         loadMoreBtn.classList.add('is-hidden');
                     }
-                      
+                    smoothScroll();
         }
             catch(error){
                 console.log(error);
             }
+        };
+
+        const smoothScroll = () => {
+            const { height: cardHeight } = gallery.getBoundingClientRect();
+            window.scrollBy({
+              top: cardHeight * 2,
+              behavior: 'smooth',
+            });
         }
-           
 
                    
                          
@@ -169,4 +182,3 @@ console.log(error);
     
 
 
-    // form.addEventListener('submit', generalFunktion);

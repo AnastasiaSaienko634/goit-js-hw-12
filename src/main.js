@@ -32,6 +32,8 @@ loadMoreBtn.classList.add('is-hidden');
 
 async function generalFunktion (event) {
 
+    loadMoreBtn.classList.add('is-hidden');
+
     loadMoreBtn.addEventListener('click', clickLoadMore);
 
     page = 1;
@@ -100,6 +102,8 @@ async function generalFunktion (event) {
         return;
     }
         loadMoreBtn.classList.remove('is-hidden');
+        loader.remove('is-hidden');
+    
 
     } catch(error){
         console.log(error);

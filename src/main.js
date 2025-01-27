@@ -153,7 +153,7 @@ async function generalFunktion (event) {
                                 console.log(error);
                         } finally {
                             loader2.classList.add('is-hidden');
-                        }
+                            }
                     };
 
             const smoothScroll = () => {

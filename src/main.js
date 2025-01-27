@@ -10,6 +10,7 @@ import { galleryFn } from './js/render-funktions.js';
 const form = document.querySelector('form');
 const input = document.querySelector('.input-form');
 const loader = document.querySelector('.loader');
+const loader2 = document.querySelector('.loader2');
 const gallery =  document.querySelector('.gallery');
 const galleryList = document.querySelector('.gallery-js');
 const loadMoreBtn = document.querySelector('.load-more');
@@ -110,6 +111,7 @@ async function generalFunktion (event) {
         }   
         finally{
             form.reset();
+            loader.classList.add('is-hidden');
         }
         };
 
@@ -117,11 +119,12 @@ async function generalFunktion (event) {
 
 
         async function clickLoadMore(event) {
-            loader.classList.remove('is-hidden');
             page++;
+            loader2.classList.remove('is-hidden');
 
             try{
                 const response2 =  await fetchImages(searchQuery,page);
+                loader2.classList.add('is-hidden');
                 const markup2 = response2.data.hits.map(el => galleryFn(el)).join('');
                 galleryList.insertAdjacentHTML( 'beforeend', markup2);
 
@@ -142,12 +145,14 @@ async function generalFunktion (event) {
                     });
                         loadMoreBtn.classList.add('is-hidden');
                     } else {
-                    loader.classList.remove('is-hidden');
+                    loader2.classList.remove('is-hidden');
                         loadMoreBtn.addEventListener('click', clickLoadMore);
                         smoothScroll();
                     }
                             }catch(error){
                                 console.log(error);
+                        } finally {
+                            loader2.classList.add('is-hidden');
                         }
                     };
 

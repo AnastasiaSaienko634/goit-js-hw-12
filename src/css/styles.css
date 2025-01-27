@@ -86,7 +86,14 @@ button {
 
 }
 
-  
+  .loader2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    margin-left:  auto;
+    margin-right: auto;
+  }
 
 
 .is-hidden {

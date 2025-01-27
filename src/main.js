@@ -65,6 +65,7 @@ async function generalFunktion (event) {
     const response = await fetchImages(searchQuery,page);
 
     if(response.data.hits.length === 0){
+        loadMoreBtn.classList.add('is-hidden');
         loader.classList.add('is-hidden');
         iziToast.show({
             message: "Sorry, there are no images matching your search query. Please try again!",
@@ -100,17 +101,15 @@ async function generalFunktion (event) {
         });
         loadMoreBtn.classList.add('is-hidden');
         return;
-    }
+    } else {
         loadMoreBtn.classList.remove('is-hidden');
-        loader.remove('is-hidden');
-    
+    }
 
     } catch(error){
         console.log(error);
         }   
         finally{
             form.reset();
-            loader.classList.add('is-hidden');
         }
         };
 
@@ -118,13 +117,11 @@ async function generalFunktion (event) {
 
 
         async function clickLoadMore(event) {
-            page++;
-
             loader.classList.remove('is-hidden');
+            page++;
 
             try{
                 const response2 =  await fetchImages(searchQuery,page);
-                loader.classList.add('is-hidden');
                 const markup2 = response2.data.hits.map(el => galleryFn(el)).join('');
                 galleryList.insertAdjacentHTML( 'beforeend', markup2);
 
@@ -144,22 +141,26 @@ async function generalFunktion (event) {
                     color: 'white',
                     });
                         loadMoreBtn.classList.add('is-hidden');
-                    }
+                    } else {
+                    loader.classList.remove('is-hidden');
                         loadMoreBtn.addEventListener('click', clickLoadMore);
                         smoothScroll();
+                    }
                             }catch(error){
                                 console.log(error);
                         }
                     };
 
             const smoothScroll = () => {
-                const { height: cardHeight } = gallery.getBoundingClientRect();
-                window.scrollBy({
-                top: cardHeight * 2,
-                behavior: 'smooth',
-            });
-            };
-
+                const galleryItem = document.querySelector('.gallery a');
+                    if(galleryItem){       
+                    const { height: cardHeight } = galleryItem.getBoundingClientRect();
+                    window.scrollBy({
+                    top: cardHeight * 2.5,
+                    behavior: 'smooth',
+                    });
+                 };
+        }
                    
                          
            

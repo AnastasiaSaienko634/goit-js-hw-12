@@ -22,6 +22,7 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
+  box-shadow: -9px -21px 44px 21px rgba(236, 208, 232, 1) inset;
 }
 
 main {

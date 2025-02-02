@@ -1,19 +1,145 @@
+
+@media only screen and (max-width: 375px) {
 /* Styles for Mobile devices */
 .container {
   min-width: 320px;
   max-width: 375px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 12px;
 }
+
+.input-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+width: 250px;
+height: 30px;
+}
+
+form {
+  margin-top: 30px;
+}
+
+.btn-form {
+  margin-top: 4px;
+  width: 80px;
+  padding: 3px 5px;
+  height: 40px;
+  border-radius: 8px;
+  outline: none;
+  border-color: #c02fe0;
+  background-color: #ab2fe0;
+  color: azure;
+  transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.photo {
+  box-shadow: 5px 3px 3px #9c9c9c;
+  border-radius: 8px;
+  height: 110px;
+  width: 140px;
+  margin: auto;
+}
+
+.text {
+  font-family: "Geologica", serif;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  text-align: center;
+  gap: 15px;
+  border-radius: 8px;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-weight: 400;
+  height: 70px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  box-shadow: -9px -21px 61px -3px rgba(221, 14, 234, 0.15) inset;
+  background-color: #ffffff
+}
+}
+
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
   .container {
     max-width: 768px;
+    margin: 0 auto;
+    padding: 0 10px;
   }
+  .input-form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 36px;
+    width: 272px;
+    height: 40px;
+    border-color: #f79bf4;
+    border-radius: 4px;
+    padding-left: 16px;
+    outline: none;
+    transition: border-color cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: outline cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .btn-form {
+    width: 91px;
+    height: 45px;
+    border-radius: 8px;
+    outline: none;
+    border-color: #c02fe0;
+    background-color: #ab2fe0;
+    color: azure;
+    transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+}
+
+.photo {
+  box-shadow: 5px 3px 3px #9c9c9c;
+  border-radius: 8px;
+  height: 220px;
+  width: 320px;
+  margin: auto;
+}
+
+.text {
+  font-family: "Geologica", serif;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 316px;
+  text-align: center;
+  gap: 20px;
+  border-radius: 8px;
+  padding-left: 2px;
+  padding-right: 2px;
+  font-weight: 400;
+  height: 70px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  box-shadow: -9px -21px 61px -3px rgba(221, 14, 234, 0.15) inset;
+  background-color: #ffffff
 }
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1200px) {
   .container {
     max-width: 1200px;
+    padding: 0 16px;
+  }
+
+  .photo {
+    height: 240px;
+    width: 372px;
+  }
+
+  .text {
+    font-size: 17px;
+    width: 370px;
+    gap: 25px;
+    height: 80px;
   }
 }

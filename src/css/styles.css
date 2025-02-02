@@ -18,19 +18,7 @@ form {
   margin-right: auto;
 }
 
-.input-form {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 36px;
-  width: 272px;
-  height: 40px;
-  border-color: #f79bf4;
-  border-radius: 4px;
-  padding-left: 16px;
-  outline: none;
-  transition: border-color cubic-bezier(0.075, 0.82, 0.165, 1);
-  transition: outline cubic-bezier(0.075, 0.82, 0.165, 1);
-}
+
 
 .input-form:hover {
   border-color: #ab2fe0;
@@ -56,17 +44,6 @@ input:focus::placeholder {
 }
 
 
-
-.btn-form {
-  width: 91px;
-  height: 45px;
-  border-radius: 8px;
-  outline: none;
-  border-color: #c02fe0;
-  background-color: #ab2fe0;
-  color: azure;
-  transition: background-color cubic-bezier(0.075, 0.82, 0.165, 1);
-}
 
 .btn-form:hover {
   background-color: #d22fe0;
@@ -118,32 +95,9 @@ button {
   font-size: 14px;
 }
 
-.text {
-  font-family: "Geologica", serif;
-  font-size: 17px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 370px;
-  text-align: center;
-  gap: 25px;
-  border-radius: 8px;
-  padding-left: 2px;
-  padding-right: 2px;
-  font-weight: 400;
-  height: 80px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  box-shadow: -9px -21px 61px -3px rgba(221, 14, 234, 0.15) inset;
-  background-color: #ffffff
-}
 
-.photo {
-  box-shadow: 5px 3px 3px #9c9c9c;
-  border-radius: 8px;
-  height: 240px;
-  width: 372px;
-}
+
+
 
 
 .card {
